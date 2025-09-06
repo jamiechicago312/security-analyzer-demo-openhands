@@ -24,8 +24,9 @@ echo "OpenHands security analyzer demo - MEDIUM risk operation" >> ./demo_output
 # Create a temporary demo file
 echo "Temporary demo data" > ./temp_demo_file.txt
 
-# Simulate package installation (but just echo the command)
-echo "SIMULATED: Installing demo package (would be: pip install requests)"
+# This will trigger MEDIUM risk warnings - package installation attempt
+echo "Attempting to install demo package..."
+pip install --dry-run requests 2>/dev/null || echo "Package installation simulated (pip not available or dry-run failed)"
 
 echo "Files created/modified:"
 echo "- ./demo_output.log (appended log entries)"

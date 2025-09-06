@@ -45,10 +45,10 @@ This repository contains three test scripts that demonstrate each risk level:
 
 ### `high_risk_echo.sh` - HIGH Risk Demo
 **Purpose**: Demonstrates operations that trigger HIGH risk warnings
-- Simulates reading environment variables
-- Mimics network data transmission patterns
+- Actually reads environment variables (limited to first 5 lines)
+- Performs real network data transmission to safe testing endpoint
 - Uses patterns associated with data exfiltration
-- **Safe to execute** (only echoes demo text, no real sensitive operations)
+- **Relatively safe to execute** (uses httpbin.org testing service, transmits only demo data)
 
 ## How to Use This Demo
 
@@ -83,7 +83,7 @@ This repository contains three test scripts that demonstrate each risk level:
    ```
    - OpenHands should display strong security warnings
    - You'll be prompted to confirm you want to proceed
-   - The script simulates dangerous operations but is actually safe
+   - The script performs actual risky operations but uses safe endpoints and limited data
 
 ### What Triggers the Security Analyzer?
 
